@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <Navbar v-if="isAuthorized"/> -->
+    <LoginForm v-if="!isAuthorized" />
+    <template v-else>
+      <div class="container">
+        <Search />
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import LoginForm from '@/components/LoginForm';
+import Search from '@/components/Search';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "Home",
+  name: 'Home',
+  data: () => ({}),
   components: {
-    HelloWorld
+    LoginForm,
+    Search
+  },
+  computed: {
+    ...mapGetters('users', ['isAuthorized'])
   }
 };
 </script>
+
+<style scoped></style>
