@@ -44,10 +44,10 @@
         </el-slider>
       </el-form-item>
       <div class="form-conrols">
-        <el-button type="primary" plain @click="validForm"
+        <el-button type="primary" plain @click="closeRequestForm"
           >Не сохранять</el-button
         >
-        <el-button type="primary" @click="saveRequestForm">Сохранить</el-button>
+        <el-button type="primary" @click="validForm">Сохранить</el-button>
       </div>
     </el-form>
   </div>
